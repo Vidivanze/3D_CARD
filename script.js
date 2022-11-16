@@ -4,17 +4,17 @@ window.onload = function () {
 };
 
 let loadedModel;
-
 const mouse = new THREE.Vector2();
 const windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );
 
 function init() {
 
-  // SCENE / CAMERA
+  // SCENE
   const sceneInstance = new SceneInit('myCanvas');
   sceneInstance.initialize();
   sceneInstance.animate();
 
+  // MODEL LOADER
   let glftLoader = new THREE.GLTFLoader();
   glftLoader.load('./assets/MagicPass_card.gltf', (gltf) => {
     
@@ -28,6 +28,7 @@ function init() {
     sceneInstance.scene.add(loadedModel);
   });
    
+  //MOUSE MOVEMENT
   document.addEventListener( 'mousemove', onMouseMove, false );
 
   animate();
@@ -37,7 +38,6 @@ function onMouseMove(event) {
 	mouse.x = ( event.clientX - windowHalf.x );
 	mouse.y = ( event.clientY - windowHalf.y );
 }
-
 
 function animate() {
   if(loadedModel) {
