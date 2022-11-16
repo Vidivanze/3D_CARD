@@ -6,6 +6,8 @@ window.onload = function () {
 let loadedModel;
 
 const mouse = new THREE.Vector2();
+const windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );
+
 function init() {
 
   // SCENE / CAMERA
@@ -26,14 +28,15 @@ function init() {
     sceneInstance.scene.add(loadedModel);
   });
 
+  document.addEventListener( 'mousemove', onMouseMove, false );
 
-  var backLight1 = new THREE.DirectionalLight(0xffffff);
-  backLight1.position.set(-400, 0, -2000);
-  scene.add(backLight1);
+  animate();
+}
 
-  var backLight2 = new THREE.DirectionalLight(0xffffff);
-  backLight2.position.set(400, 0, -2000);
-  scene.add(backLight2);
+function onMouseMove(event) {
+	mouse.x = ( event.clientX - windowHalf.x );
+	mouse.y = ( event.clientY - windowHalf.y );
+}
 
   // LIGHTS HELPERS
   
