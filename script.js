@@ -23,9 +23,8 @@ function init() {
 
     loadedModel = gltf.scene;
 
-  var frontLight2 = new THREE.DirectionalLight(0xffffff);
-  frontLight2.position.set(400, 0, 2000);
-  sceneInstance.scene.add(frontLight2);
+    sceneInstance.scene.add(loadedModel);
+  });
 
 
   var backLight1 = new THREE.DirectionalLight(0xffffff);
