@@ -3,6 +3,9 @@ window.onload = function () {
   init();
 };
 
+let loadedModel;
+
+const mouse = new THREE.Vector2();
 function init() {
 
   // SCENE / CAMERA
@@ -10,13 +13,15 @@ function init() {
   sceneInstance.initialize();
   sceneInstance.animate();
 
+  let glftLoader = new THREE.GLTFLoader();
+  glftLoader.load('./assets/MagicPass_card.gltf', (gltf) => {
 
+    gltf.scene.rotation.z = Math.PI / 24;
+    gltf.scene.rotation.y = Math.PI / 12;
+    gltf.scene.position.y = 0.2;
+    gltf.scene.scale.setScalar(0.9);
 
-  // LIGHTS 
-  /*
-  var frontLight1 = new THREE.DirectionalLight(0xffffff);
-  frontLight1.position.set(-400, 0, 1000);
-  sceneInstance.scene.add(frontLight1);
+    loadedModel = gltf.scene;
 
   var frontLight2 = new THREE.DirectionalLight(0xffffff);
   frontLight2.position.set(400, 0, 2000);
