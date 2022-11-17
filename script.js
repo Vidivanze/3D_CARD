@@ -41,8 +41,8 @@ function onMouseMove(event) {
 
 function animate() {
   if(loadedModel) {
-    loadedModel.rotation.y = THREE.MathUtils.lerp(loadedModel.rotation.y, (mouse.x * Math.PI) / 10000, 0.1)
-    loadedModel.rotation.x = THREE.MathUtils.lerp(loadedModel.rotation.x, (mouse.y * Math.PI) / 9000, 0.1)
+    loadedModel.rotation.y = THREE.MathUtils.lerp(loadedModel.rotation.y, (mouse.x * Math.PI) / 7000, 0.1)
+    loadedModel.rotation.x = THREE.MathUtils.lerp(loadedModel.rotation.x, (mouse.y * Math.PI) / 5000, 0.1)
   }
 
   requestAnimationFrame( animate );
