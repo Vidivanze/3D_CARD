@@ -16,7 +16,7 @@ function init() {
 
   // MODEL LOADER
   let glftLoader = new THREE.GLTFLoader();
-  glftLoader.load('./assets/MagicPass_card.gltf', (gltf) => {
+  glftLoader.load('./assets/MagicPass_card2.gltf', (gltf) => {
     
     gltf.scene.rotation.z = Math.PI / 24;
     gltf.scene.rotation.y = Math.PI / 12;
@@ -41,7 +41,7 @@ function onMouseMove(event) {
 
 function animate() {
   if(loadedModel) {
-    loadedModel.rotation.y = THREE.MathUtils.lerp(loadedModel.rotation.y, (mouse.x * Math.PI) / 4000, 0.1)
+    loadedModel.rotation.y = THREE.MathUtils.lerp(loadedModel.rotation.y, (mouse.x * Math.PI) / 3000, 0.1)
     loadedModel.rotation.x = THREE.MathUtils.lerp(loadedModel.rotation.x, (mouse.y * Math.PI) / 2000, 0.1)
   }
 
