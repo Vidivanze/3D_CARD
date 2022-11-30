@@ -16,7 +16,7 @@ function init() {
 
   // MODEL LOADER
   let glftLoader = new THREE.GLTFLoader();
-  glftLoader.load('./assets/MagicPass_card2.gltf', (gltf) => {
+  glftLoader.load('./assets/MagicPass_card.gltf', (gltf) => {
     
     gltf.scene.rotation.z = Math.PI / 24;
     gltf.scene.rotation.y = Math.PI / 12;
