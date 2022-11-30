@@ -5,7 +5,7 @@ window.onload = function () {
 
 let loadedModel;
 const mouse = new THREE.Vector2();
-const windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );
+let windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );
 
 function init() {
 
@@ -31,7 +31,15 @@ function init() {
   //MOUSE MOVEMENT
   document.addEventListener( 'mousemove', onMouseMove, false );
 
+  // if window resizes
+  window.addEventListener("resize", () => this.onWindowResize(), false);
+
   animate();
+}
+
+function  onWindowResize() {
+  console.log(window.innerWidth)
+  windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );
 }
 
 function onMouseMove(event) {
