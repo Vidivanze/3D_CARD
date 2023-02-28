@@ -37,7 +37,7 @@ function init() {
   animate();
 }
 
-function  onWindowResize() {
+function onWindowResize() {
   console.log(window.innerWidth)
   windowHalf = new THREE.Vector2( window.innerWidth / 2, window.innerHeight / 2 );
 }
